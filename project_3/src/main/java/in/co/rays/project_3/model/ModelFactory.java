@@ -177,5 +177,20 @@ public final class ModelFactory {
 
 		return transportModel;
 	}
+	
+	
+	public AbcModelInt getAbcModel() {
+
+		AbcModelInt abcModel = (AbcModelInt) modelCache.get("abcModel");
+		if (abcModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				abcModel = new AbcModelHibImpl();
+			}
+
+			modelCache.put("abcModel", abcModel);
+		}
+
+		return abcModel;
+	}
 
 }

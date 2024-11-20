@@ -42,6 +42,9 @@ public interface ORSView {
 	
 	public String TRANSPORTATION_LIST_VIEW = PAGE_FOLDER + "/TransportationListView.jsp";
 	public String TRANSPORTATION_VIEW = PAGE_FOLDER + "/TransportationView.jsp";
+	
+	public String ABC_LIST_VIEW = PAGE_FOLDER + "/AbcListView.jsp";
+	public String ABC_VIEW = PAGE_FOLDER + "/AbcView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -78,4 +81,7 @@ public interface ORSView {
 	
 	public String TRANSPORTATION_CTL = APP_CONTEXT + "/ctl/TransportationCtl";
 	public String TRANSPORTATION_LIST_CTL = APP_CONTEXT + "/ctl/TransportationListCtl";
+	
+	public String ABC_CTL = APP_CONTEXT + "/ctl/AbcCtl";
+	public String ABC_LIST_CTL = APP_CONTEXT + "/ctl/AbcListCtl";
 }

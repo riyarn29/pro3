@@ -240,6 +240,25 @@ public class DataValidator
 		    		return false;							
 		    	}
 		    }
+		 
+		    public static boolean isValidDate(String val) {
+		        // Get today's date
+		        Date today = new Date();
+		        
+		        // Convert the entered date string to a Date object (assuming DataUtility.getDate() handles this)
+		        Date enterDate = DataUtility.getDate(val);
+		        
+		        // Check if the entered date is in the future
+		        if (enterDate.after(today)) {
+		            // If the entered date is after today, return false
+		            return false;
+		        }
+		        
+		        // If the entered date is not in the future, return true
+		        return true;
+		    }
+		
+
 	 /**
 	  * Check if value is valid EmailId
 	  * @param val :val
