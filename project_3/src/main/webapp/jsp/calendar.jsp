@@ -9,7 +9,7 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
  <script>
-  $( function() {
+/*   $( function() {
     $( "#datepicker" ).datepicker({
       changeMonth: true,
       changeYear: true,
@@ -19,6 +19,31 @@
 	
     });
   } );
+   */
+  
+  $(function() {
+	  $( "#datepicker" ).datepicker({
+	    changeMonth: true,
+	    changeYear: true,
+	    yearRange: '2020:2024',
+	    dateFormat: 'dd/mm/yy',
+	    maxDate: 0, // Disallows future dates (sets max date to today)
+	    onSelect: function(dateText, inst) {
+	      // Get the selected date as a Date object
+	      var selectedDate = $(this).datepicker('getDate');
+	      var today = new Date();
+
+	      // Check if the selected date is in the future
+	      if (selectedDate > today) {
+	        // If the date is in the future, display a message
+	        alert("You cannot select a future date. Please select today or a past date.");
+	        // Clear the datepicker input field if the date is invalid
+	        $(this).val('');
+	      }
+	    }
+	  });
+	});
+
 
 
 
